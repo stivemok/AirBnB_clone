@@ -17,7 +17,8 @@ class BaseModel:
     """
 
     def __init__(self, *args, **kwargs):
-        """*args , **kwargs allow class accpet vaiable number of argument and keyword arguments during initialization
+        """*args , **kwargs allow class accpet vaiable number of argument
+        and keyword arguments during initialization
         Instatntiates a new model"""
         if not kwargs:
 
@@ -51,12 +52,12 @@ class BaseModel:
 
     def to_dict(self):
         """Convert instance into dict format
-        This Method will be first piece of the serialization/Deserialization process create dictionary simple object type of BaseModel
-        """
-        dictionary = {}
-        dictionary.update(self.__dict__)
-        dictionary.update({"__class__": (str(type(self)).split(".")[-1]).split("'")[0]})
-        """convert creat_at & update_at string objects into into ISO format"""
-        dictionary["created_at"] = self.created_at.isoformat()
-        dictionary["updated_at"] = self.updated_at.isoformat()
-        return dictionary
+        This Method will be first piece of the serialization/Deserialization
+        process create dict1 simple object type of BaseModel"""
+        dict1 = self.__dict__.copy()
+        dict1["__class__"] = self.__class__.__name__
+        for k, v in self.__dict__.items():
+            if k in ("created_at", "updated_at"):
+                v = self.__dict__[k].isoformat()
+                dict1[k] = v
+        return dict1
