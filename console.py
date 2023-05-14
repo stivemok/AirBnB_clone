@@ -41,6 +41,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif lists[0] not in self.classes:
             print("** class doesn't exist **")
+        else:
+            print(eval(lists[0])().id)
+            storage.save()
 
     def do_show(self, arg):
         """ Prints the string representation of an
@@ -101,7 +104,8 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """  Updates an instance based on the class
         name and id by adding or updating attribute"""
-        lists = split(arg)
+        lists = split(arg, " ")
+        obj = models.storage.all()
         if len(lists) == 0:
             print("** class name missing **")
         elif lists[0] not in self.classes:
@@ -112,14 +116,15 @@ class HBNBCommand(cmd.Cmd):
             print("** attribute name missing **")
         elif len(lists) == 3:
             print("** value missing **")
-        else:
-            obj = models.storage.all()
-            key = lists[0] + '.' + lists[1]
-            if key in obj:
-                del obj[key]
-                models.storage.save()
-            else:
-                print("** no instance found **")
+        elif "{}.{}".format(lists[0], lists[1]) not in obj.keys():
+            print("** no instance found **")
+        key = lists[0] + '.' + lists[1]
+        value = obj[key]
+        try:
+            value.__dict__[lists[2]] = eval(lists[3])
+        except Exception:
+            value.__dict__[lists[2]] = lists[3]
+            value.save()
 
 
 if __name__ == '__main__':
