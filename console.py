@@ -33,6 +33,9 @@ class HBNBCommand(cmd.Cmd):
         """ EOF to exit the program """
         print()
         return True
+    def emptyline(self):
+        """ empty line + ENTER shouldn’t execute anything """
+        pass
 
     def do_create(self, arg):
         """ creates new instance of Basemodel """
