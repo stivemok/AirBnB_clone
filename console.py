@@ -107,7 +107,7 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """  Updates an instance based on the class
         name and id by adding or updating attribute"""
-        lists = split(arg, " ")
+        lists = split(arg)
         obj = models.storage.all()
         if len(lists) == 0:
             print("** class name missing **")
@@ -128,6 +128,39 @@ class HBNBCommand(cmd.Cmd):
         except Exception:
             value.__dict__[lists[2]] = lists[3]
             value.save()
+
+    def do_count(self, arg):
+        """  retrieve the number of instances of a class """
+        lists = split(arg)
+        obj = models.storage.all()
+        num_instances = 0
+        if lists[0] not in self.classes:
+            print("** class doesn't exist **")
+            return
+        else:
+            for key in obj:
+                className = key.split('.')
+                if className[0] == lists[0]:
+                    num_instances += 1
+
+            print(num_instances)
+
+    def precmd(self, arg):
+        """ executed just before the command line is interpreted """
+        args = arg.split('.', 1)
+        if len(args) == 2:
+            _class = args[0]
+            args = args[1].split('(', 1)
+            command = args[0]
+            if len(args) == 2:
+                args = args[1].split(')', 1)
+                if len(args) == 2:
+                    _id = args[0]
+                    other_arguments = args[1]
+            line = command + " " + _class + " " + _id + " " + other_arguments
+            return line
+        else:
+            return arg
 
 
 if __name__ == '__main__':
