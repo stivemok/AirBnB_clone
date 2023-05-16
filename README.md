@@ -47,7 +47,9 @@ Do you remember the Shell? It’s exactly the same but limited to a specific use
 [* unittest module](https://docs.python.org/3.8/library/unittest.html#module-unittest)
 
 [* args/kwargs](https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/)
+
 [* Python test cheatsheet](https://www.pythonsheets.com/notes/python-tests.html)
+
 [* cmd module wiki page](https://wiki.python.org/moin/CmdModule)
 
 [* python unittest](https://realpython.com/python-testing/)
