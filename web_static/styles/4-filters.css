@@ -17,12 +17,8 @@ button {
     border: none;
     border-radius: 4px;
     margin-right: 30px;
-<<<<<<< HEAD
-    float: right;
-=======
+    float: left;
     margin-top: 10px;
-
->>>>>>> 894c27366f5a34bee03130f4f3e70bd2400c8094
 }
 button:hover {
     opacity: 0.9;
