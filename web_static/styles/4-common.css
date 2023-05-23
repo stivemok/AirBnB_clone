@@ -5,6 +5,8 @@ body {
     font-size: 14px;
     font-family: Circular,"Helvetica Neue", Hevetica, Arial,sans-serif;
     border: 1px solid red;
+    position: fixed;
+    bottom: 0;
 }
 .container {
     max-Width: 1000px;
