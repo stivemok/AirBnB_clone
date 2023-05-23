@@ -1,6 +1,6 @@
 body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     color: #484848;
     font-size: 14px;
     font-family: Circular,"Helvetica Neue", Hevetica, Arial,sans-serif;
@@ -8,7 +8,7 @@ body {
 .container {
     max-Width: 1000px;
     margin-right: auto;
-    margin_left: auto;
+    margin-left: auto;
     margin-top: 30px;
     margin-bottom: 30px;
 }
