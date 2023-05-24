@@ -73,5 +73,6 @@
 
 .user p, .description p {
     text-align: left;
+    font-size: 15px;
     margin: 0;
 }
