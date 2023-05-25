@@ -75,8 +75,8 @@
 .information .max_guest p,
 .information .number_rooms p,
 .information .number_bathrooms p{
-    padding-top:30px;
-    text-align:center;
+    padding-top: 30px;
+    text-align: center;
 }
 
 .user p, .description p {
