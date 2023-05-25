@@ -36,7 +36,9 @@
     margin-right: 60px;
     line-height: 60px
 }
-
+.price_by_night p{
+    margin-top: -10px;
+}
 .information {
     height: 80px;
     border-top: 1px solid #DDDDDD;
