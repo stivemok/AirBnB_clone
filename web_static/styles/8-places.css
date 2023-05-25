@@ -40,12 +40,14 @@
     height: 80px;
     border-top: 1px solid #DDDDDD;
     border-bottom: 1px solid #DDDDDD;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .information .max_guest{
     width: 100px;
     background-image: url(../images/icon_group.png);
-    font-size: 16px;
+    font-size: 15px;
     background-repeat: no-repeat;
     background-position: center top;
     display: inline-block;
@@ -54,7 +56,7 @@
 .information .number_rooms{
     width: 100px;
     background-image: url(../images/icon_bed.png);
-    font-size: 16px;
+    font-size: 15px;
     background-repeat: no-repeat;
     background-position: center top;
     display: inline-block;
@@ -63,7 +65,7 @@
 .information .number_bathrooms{
     width: 100px;
     background-image: url(../images/icon_bath.png);
-    font-size: 16px;
+    font-size: 15px;
     background-repeat: no-repeat;
     background-position: center top;
     display: inline-block;
@@ -78,6 +80,6 @@
 
 .user p, .description p {
     text-align: left;
-    font-size: 15px;
+    font-size: 13px;
     margin: 0;
 }
