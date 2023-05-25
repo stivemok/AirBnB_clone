@@ -11,7 +11,7 @@
 }
 
 .places article {
-    width: 390px;
+    width: 90px;
     padding: 20px;
     margin: 20px;
     border: 1px solid #FF5A5F;
@@ -82,5 +82,5 @@
 .user p, .description p {
     text-align: left;
     font-size: 13px;
-    margin: 0;
+    margin: 5px;
 }
